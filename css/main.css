@@ -1,0 +1,22 @@
+body{
+	margin: 10px;
+}
+
+.modal-container{
+	border: 1px solid #ddd;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.company-icon{
+	display: block;
+}
+
+.tabset{
+	width: 500px;
+	border-bottom:1px solid #ddd;
+}
+
+.tab-content{
+	min-height: 100px;
+}

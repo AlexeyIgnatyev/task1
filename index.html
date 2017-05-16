@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css"/>
+
+		<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.5.7/angular.js" data-semver="1.5.7"></script>
+	    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+		
+		<script src="js/controller.js"></script>
+		<script src="js/services/modalWindowService.js"></script>
+		<script src="js/services/tabsInfoService.js"></script>
+		<script src="js/directives/modalDirective.js"></script>
+	</head>
+	<body  ng-app="myApp" >
+		<div ng-controller="MainCtrl">
+			<modal title="modalTitle" show="show">
+				<div class="modal-container">
+					<div> This is a text that situated inside the modal directive</div>
+					<img class="company-icon" src="img/ISSoft.png" width="100px" />
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</div>
+			</modal>
+
+			<uib-tabset class="tabset" active='activeTabInit'>
+			    <uib-tab  ng-repeat= "tabInfo in tabsInfo" index="tabInfo.id" ng-click="getMainContent(tabInfo)" >
+			    	<uib-tab-heading>{{ tabInfo.headerTitle }}</uib-tab-heading>
+			    	<div class="tab-content">{{ tabInfo.mainContent }} </div>
+			    </uib-tab>
+			 </uib-tabset>
+		</div>
+	</body>
+</html>
